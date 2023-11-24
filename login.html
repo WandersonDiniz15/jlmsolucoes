@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLM WEB - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="Imagens/J L M Logo laranja.png" alt="Logo" width="250" height="100"></a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="#"><i class="fas fa-info"></i></a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="login-feedback"></div>
+        </section>
+    </main>
+   
+    <footer>
+        <div>
+            <p>&copy; 2023 JLM WEB. Todos os direitos reservados.</p>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/seu_perfil/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/seu_perfil/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/seu_perfil/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/seu_perfil/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var loginForm = document.getElementById('login-form');
+            var loginFeedback = document.getElementById('login-feedback');
+
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                if (username === 'diniz' && password === '092515') {
+                    loginFeedback.innerHTML = '<p>Login bem-sucedido! Redirecionando para a página principal...</p>';
+                    setTimeout(function() {
+                        window.location.href = 'visualizacao_equipamentos.html';
+                    }, 2000);
+                } else {
+                    loginFeedback.innerHTML = '<p>Usuário ou senha inválidos. Tente novamente.</p>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

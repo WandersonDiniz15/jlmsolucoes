@@ -1,0 +1,218 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #ec712e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 30px;
+  }
+  
+  nav li:first-child {
+    margin-left: 0;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  /* Dashboard */
+  #dashboard {
+    background-color: #fff;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #dashboard h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .dashboard-item {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-item h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .dashboard-item-blue {
+    background-color: #ffffff; /* azul escuro */
+    color: #000000; /* texto em branco */
+  }
+  
+  .dashboard-item-green {
+    background-color: #ffffff; /* verde escuro */
+    color: #000000; /* texto em branco */
+  }
+  
+  .dashboard-item-yellow {
+    background-color: #ffffff; /* amarelo escuro */
+    color: #000000; /* texto em branco */
+  }
+  
+  .dashboard-item-red {
+    background-color: #ffffff; /* vermelho escuro */
+    color: #000000; /* texto em branco */
+  }
+  
+  /* Lista de equipamentos */
+  #lista-equipamentos {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 50px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #lista-equipamentos .title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Adicione um espaço entre o título e a tabela */
+}
+
+  #lista-equipamentos h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  #lista-equipamentos table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #lista-equipamentos table th,
+  #lista-equipamentos table td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #lista-equipamentos table th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  #lista-equipamentos table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  #lista-equipamentos .btn-cadastrar {
+    display: block;
+    margin: 50px auto;
+    background-color: #ec712e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  #lista-equipamentos .btn-cadastrar:hover {
+    background-color: #d65f00;
+  }
+  
+  .btn-editar,
+.btn-excluir {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-editar {
+  background-color: #0b7c1e;
+}
+
+.btn-excluir {
+  background-color: #e30d0d;
+  margin-left: 10px;
+}
+
+.btn-editar:hover {
+  background-color: #d65f00;
+}
+
+.btn-excluir:hover {
+  background-color: #cc4c39;
+}
+section#cadastro form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.btn-cadastrar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(7, 190, 16);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+   /* Footer */
+   footer {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }

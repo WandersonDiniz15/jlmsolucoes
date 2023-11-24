@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLM Soluções - Visualização de Equipamentos</title>
+    <link rel="stylesheet" href="css/vizualização eq.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <h1>JLM Soluções</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Equipamentos</a></li>
+                <li><a href="contratos.html">Contratos</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <div class="dashboard-container">
+            <div class="dashboard-item dashboard-item-blue">
+              <h3>Notebooks <i class="fas fa-laptop"></i></h3>
+              <p>Quantidade: 50</p>
+            </div>
+            <div class="dashboard-item dashboard-item-green">
+             <h3>Desktops <i class="fas fa-desktop"></i></h3>
+              <p>Quantidade: 4</p>
+            </div>
+            <div class="dashboard-item dashboard-item-yellow">
+              <h3>Impressoras <i class="fas fa-print"></i></h3>
+              <p>Quantidade: 20</p>
+            </div>
+            <div class="dashboard-item dashboard-item-red">
+              <h3>Monitores <i class="fas fa-tv"></i></h3>
+              <p>Quantidade: 25</p>
+            </div>
+          </div>
+    </section>
+
+    <section id="lista-equipamentos">
+        <div class="title-bar">
+            <h2>Equipamentos</h2>
+            <a href="cadastro_equipamentos.html" class="btn-cadastrar">+ Novo</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Id</th>
+                    <th>Número de Série</th>
+                    <th>Contrato Lotado</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="equipamentos-list">
+                <!-- As linhas de equipamentos serão adicionadas dinamicamente aqui -->
+            </tbody>
+        </table>
+    </section>
+   
+    <footer>
+        <div>
+            <p>&copy; 2023 JLM WEB. Todos os direitos reservados.</p>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/seu_perfil/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/seu_perfil/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/seu_perfil/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/seu_perfil/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script>
+        // Simulando uma lista de equipamentos
+        const equipamentos = [
+            {
+                tipo: 'Notebook',
+                id: 'N001',
+                numeroSerie: '001',
+                contratoLotado: '0001',
+                status: 'Em Uso'
+            },
+            {
+                tipo: 'Desktop',
+                id: 'D002',
+                numeroSerie: '002',
+                contratoLotado: '0002',
+                status: 'Disponível'
+            },
+            {
+                tipo: 'Impressora',
+                id: 'I003',
+                numeroSerie: '003',
+                contratoLotado: '0003',
+                status: 'Em Manutenção'
+            },
+            {
+                tipo: 'Monitor',
+                id: 'M004',
+                numeroSerie: '004',
+                contratoLotado: '0004',
+                status: 'Disponível'
+            }
+        ];
+
+        // Obtém a referência para a tabela onde serão mostrados os equipamentos
+        const equipamentosList = document.querySelector('#equipamentos-list');
+
+        // Função para adicionar uma linha de equipamento na tabela
+        function addEquipamentoRow(equipamento) {
+            // Cria uma nova linha na tabela
+            const row = equipamentosList.insertRow();
+
+            // Adiciona as células na nova linha
+            const tipoCell = row.insertCell();
+            const idCell = row.insertCell();
+            const numeroSerieCell = row.insertCell();
+            const contratoLotadoCell = row.insertCell();
+            const statusCell = row.insertCell();
+            const acoesCell = row.insertCell();
+
+            // Adiciona os valores nas células
+            tipoCell.textContent = equipamento.tipo;
+            idCell.textContent = equipamento.id;
+            numeroSerieCell.textContent = equipamento.numeroSerie;
+            contratoLotadoCell.textContent = equipamento.contratoLotado;
+            statusCell.textContent = equipamento.status;
+            acoesCell.innerHTML = '<button onclick="deleteEquipamentoRow(this)">Excluir</button> <button onclick="editEquipamentoRow(this)">Editar</button>';
+        }
+
+        // Função para adicionar todas as linhas de equipamentos na tabela
+        function addEquipamentosRows(equipamentos) {
+            for (let equipamento of equipamentos) {
+                addEquipamentoRow(equipamento);
+            }
+        }
+
+        // Função para excluir uma linha de equipamento da tabela
+        function deleteEquipamentoRow(button) {
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+        
+        // Função para editar uma linha de equipamento da tabela
+        function editEquipamentoRow(button) {
+            const row = button.parentNode.parentNode;
+            const tipo = row.cells[0].textContent;
+            const id = row.cells[1].textContent;
+            const numeroSerie = row.cells[2].textContent;
+            const contratoLotado = row.cells[3].textContent;
+            const status = row.cells[4].textContent;
+            // Aqui você pode implementar a lógica para editar o equipamento selecionado
+        }
+        
+        // Função para gerar o ID padronizado para cada tipo de equipamento
+        function gerarIdPadronizado(tipo, equipamentos) {
+            const prefixo = tipo[0].toUpperCase(); // Pega a primeira letra do tipo de equipamento e transforma em maiúscula
+            const maxId = equipamentos.reduce((max, equipamento) => {
+                if (equipamento.id.startsWith(prefixo)) {
+                    const num = parseInt(equipamento.id.substr(1));
+                    if (num > max) {
+                        max = num;
+                    }
+                }
+                return max;
+            }, 0);
+            return prefixo + ('000' + (maxId + 1)).slice(-3); // Concatena o prefixo com o próximo número disponível em três dígitos
+        }
+
+        // Adiciona todas as linhas de equipamentos na tabela
+        addEquipamentosRows(equipamentos);
+    </script>
+</body>
+
+</html>

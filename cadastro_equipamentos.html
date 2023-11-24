@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLM Soluções - Cadastro de Equipamentos</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="Imagens/J L M Logo laranja.png" alt="Logo" width="250" height="100"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="#"><i class="fas fa-info"></i></a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cadastro">
+        <h2>Cadastro de Equipamentos</h2>
+        <form id="cadastro-form">
+          <label for="tipo">Tipo de Equipamento:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecione o tipo de equipamento</option>
+            <option value="Notebook">Notebook</option>
+            <option value="Desktop">Desktop</option>
+            <option value="Kit Mouse e Teclado">Kit Mouse e Teclado</option>
+            <option value="Monitor">Monitor</option>
+            <option value="Impressora">Impressora</option>
+            <option value="Scanner">Scanner</option>
+            <option value="Mouse">Mouse</option>
+          </select>
+      
+          <label for="numero-serie">Número de Série:</label>
+          <input type="text" id="numero-serie" name="numero-serie" placeholder="Digite o número de série" required>
+      
+          <label for="contrato-lotado">Contrato Lotado:</label>
+          <select id="contrato-lotado" name="contrato-lotado" required>
+            <option value="">Selecione o contrato lotado</option>
+            <option value="IADVH">IADVH</option>
+            <option value="EMSERH">EMSERH</option>
+            <option value="BELEM - UPA">BELEM - UPA</option>
+            <option value="IMPERATRIZ - SEMED">IMPERATRIZ - SEMED</option>
+            <option value="FITERMAN">FITERMAN</option>
+            <option value="VULCANGET">VULCANGET</option>
+            <option value="CRECHE">CRECHE</option>
+          </select>
+      
+          <label for="status">Status:</label>
+          <select id="status" name="status" required>
+            <option value="">Selecione o status do equipamento</option>
+            <option value="Em uso">Em uso</option>
+            <option value="Disponível">Disponível</option>
+            <option value="Em manutenção">Em manutenção</option>
+            <option value="Sem condições de uso">Sem condições de uso</option>
+          </select>
+      
+          <div class="buttons">
+            <button type="submit">Cadastrar</button>
+            <a href="visualizar_equipamentos.html" class="btn-visualizar">Visualizar Equipamentos</a>
+          </div>
+        </form>
+      </section>
+
+    <footer>
+        <p>&copy; 2023 JLM WEB. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('cadastro-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var tipo = document.getElementById('tipo').value;
+            var numeroSerie = document.getElementById('numero-serie').value;
+            var contratoLotado = document.getElementById('contrato-lotado').value;
+            var status = document.getElementById('status').value;
+
+            var equipamento = {
+                tipo: tipo,
+                numeroSerie: numeroSerie,
+                contratoLotado: contratoLotado,
+                status: status
+            };
+
+            var equipamentos = JSON.parse(localStorage.getItem('equipamentos')) || [];
+
+            // Verifica se o número de série já foi cadastrado
+            var numeroSerieJaCadastrado = equipamentos.some(function(equipamentoCadastrado) {
+                return equipamentoCadastrado.numeroSerie === numeroSerie;
+            });
+
+            if (numeroSerieJaCadastrado) {
+                alert('Este número de série já foi cadastrado, por favor insira outro.');
+                return;
+            }
+
+            equipamentos.push(equipamento);
+            localStorage.setItem('equipamentos', JSON.stringify(equipamentos));
+
+            window.location.href = 'visualizacao_equipamentos.html';
+        });
+
+    
+
+    </script>
+    
+</body>
+
+</html>

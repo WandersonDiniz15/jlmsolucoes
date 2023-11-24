@@ -1,0 +1,49 @@
+.service-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+  }
+  
+  .service-box img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+  }
+  
+  .service-box h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .service-box p {
+    font-size: 16px;
+    text-align: justify;
+    margin-top: 10px;
+    padding: 10px;
+    height: 40%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  
+  .service-box p::-webkit-scrollbar {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .service-box {
+      width: 100%;
+      height: auto;
+    }
+    
+    .service-box img {
+      height: 40%;
+    }
+    
+    .service-box p {
+      height: 60%;
+    }
+  }

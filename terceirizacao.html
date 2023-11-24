@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLM WEB - Terceirização de Equipamentos</title>
+    <link rel="stylesheet" href="css/terceirizacao.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="menu-icon">
+            <div class="menu-icon-bar"></div>
+            <div class="menu-icon-bar"></div>
+            <div class="menu-icon-bar"></div>
+        </div>
+        <h1>JLM WEB</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="terceirizacao.html">Terceirização de Equipamentos</a></li>
+                <li><a href="login.html">Logar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="terceirizacao">
+        <h2>Terceirização de Equipamentos</h2>
+        <div class="service service-box">
+            <div class="carousel">
+                <img src="Imagens/Equipamentos/DEll_intermediario.png" alt="Notebook Intermediário">
+                <img src="Imagens/Equipamentos/Vostro (2).png" alt="Notebook Básico">
+                <img src="caminho/para/imagemnotebook3.jpg" alt="Notebook 3">
+            </div>
+            <h3>Notebooks</h3>
+            <p class="descricao"></p>
+        </div>
+        <div class="service">
+            <div class="carousel">
+                <img src="Imagens/Equipamentos/Brother ADS 220.png" alt="Scanner 1">
+                <img src="Imagens/Equipamentos/Scanner canon.png" alt="Scanner 2">
+            </div>
+            <h3>Scanners</h3>
+            <p class="descricao"></p>
+        </div>
+        <div class="service">
+            <div class="carousel">
+                <img src="Imagens/Equipamentos/Canon Maxify GX7010.png" alt="Impressora 1">
+                <img src="Imagens/Equipamentos/Epson 5710.png" alt="Impressora 2">
+                <img src="Imagens/Equipamentos/Epson M1120.png" alt="Impressora 3">
+                <img src="Imagens/Equipamentos/Ricoh IM 550.png" alt="Impressora 4">
+            </div>
+            <h3>Impressoras</h3>
+            <p class="descricao"></p>
+        </div>
+        <div class="service">
+            <div class="carousel">
+                <img src="Imagens/Equipamentos/Monitor 23.8” Dell S2421HN.png" alt="Monitor 1">
+                <img src="Imagens/Equipamentos/monitor dell.png" alt="Monitor 2">
+            </div>
+            <h3>Monitores</h3>
+            <p class="descricao"></p>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2023 JLM WEB. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+<script>
+    $(document).ready(function() {
+    $('.menu-icon').click(function() {
+        $('nav ul').toggleClass('menu-open');
+    });
+});
+
+</script>
+
+</html>
