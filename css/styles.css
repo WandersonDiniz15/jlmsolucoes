@@ -1,9 +1,23 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilos gerais */
 body {
     font-family: 'Montserrat', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ec712e;
+    color: #4a4a4a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Estilos do cabeçalho */
@@ -13,35 +27,68 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    flex-wrap: wrap; /* Permite a quebra de linha em telas menores */
 }
 
-header h1 {
+h1 {
     margin: 0;
     color: #fff;
+    flex: 1; /* Ocupa o espaço disponível */
+    text-align: center; /* Alinha o texto horizontalmente */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Alinha à horizontalmente */
+    flex: 1; /* Ocupa o espaço disponível */
+    margin-top: 10px; /* Adiciona um pequeno espaço entre o h1 e o ul */
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 10px;
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Remove a margem do primeiro item */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilizando os ícones */
+.nav-icon {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+/* Media Query para telas menores */
+@media screen and (max-width: 768px) {
+    h1, nav ul {
+        width: 100%; /* Garante que ocupem a largura total */
+        text-align: center; /* Centraliza o texto */
+        margin-top: 10px; /* Adiciona espaço entre o h1 e o ul */
+    }
+
+    nav ul {
+        justify-content: space-around; /* Alinha os itens horizontalmente */
+    }
 }
 
 
-/* Estilos do banner */
+/* Estilos da seção de banner */
 #banner {
     background-color: #ec712e;
     padding: 40px;
     text-align: center;
+    width: 100%;
 }
 
 #banner h2 {
@@ -58,21 +105,7 @@ nav ul li a {
 #sobre {
     background-color: #fff;
     padding: 40px;
-}
-
-#sobre h2 {
-    margin: 0;
-    color: #000;
-}
-
-#sobre p {
-    margin-top: 10px;
-    color: #000;
-    text-align: left; /* Removendo a centralização do texto */
-}
-#sobre {
-    background-color: #fff;
-    padding: 40px;
+    width: 100%;
 }
 
 #sobre h2 {
@@ -82,22 +115,14 @@ nav ul li a {
 
 .about-content {
     display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .text {
     max-width: 50%;
-  text-align: left;
-  padding-right: 20px;
-}
-
-.image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    text-align: left;
+    padding-right: 20px;
 }
 
 .image img {
@@ -106,265 +131,62 @@ nav ul li a {
     margin-top: 20px;
 }
 
-
-
-
-
-section#dashboard {
-    background-color: #9a9a9a;
-    padding: 20px;
-}
-
-h2 {
-    margin-top: 0;
-}
-
-.dashboard-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-}
-
-.dashboard-item {
-    background-color: rgb(0, 0, 0);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-item h3 {
-    margin-top: 0;
-}
-
-section#lista-equipamentos {
-    margin-top: 20px;
-    color: #000000;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th,
-table td {
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background-color: #333;
-    color: white;
-}
-
-table tr:nth-child(even) {
-    background-color: #f4f4f4;
-}
-
-.btn-cadastrar {
-    display: inline-block;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn-cadastrar:hover {
-    background-color: #333;
-}
-
-footer {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #888;
-}
-
-.btn-cadastrar {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-/* Estilo para a listagem de equipamentos */
-/* styles.css */
-
-/* Estilo geral da tabela */
-/* styles.css */
-
-/* Estilo geral da tabela */
-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Estilo do cabeçalho da tabela */
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Estilo das linhas ímpares */
-  tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Estilo das linhas pares */
-  tr:nth-child(even) {
-    background-color: #e0e0e0;
-  }
-  
-  /* Estilo das letras */
-  td {
-    color: black;
-  }
-  
-  /* Estilo do botão "Cadastrar Equipamentos" */
-  .btn-cadastrar {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-  
-  /* Estilo do rodapé */
-  footer {
-    text-align: center;
-    background-color: #000000;
-    padding: 10px;
-  }
-  
-  /* Estilos gerais */
-body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
-
-/* Estilos do cabeçalho */
-header {
-    background-color: #ec712e;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    color: #fff;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-
-/* Estilos do banner */
-#banner {
-    background-color: #ec712e;
-    padding: 40px;
-    text-align: center;
-}
-
-#banner h2 {
-    margin: 0;
-    color: #fff;
-}
-
-#banner p {
-    margin-top: 10px;
-    color: #fff;
-}
-
-#sobre {
-    background-color: #fff;
-    padding: 40px;
-}
-
-#sobre h2 {
-    margin: 0;
-    color: #000;
-}
-
-#sobre p {
-    margin-top: 10px;
-    color: #000;
-    text-align: left; /* Removendo a centralização do texto */
-}
-
-
 /* Estilos da seção Serviços */
 #servicos {
     background-color: #ec712e;
     padding: 10px;
     text-align: center;
-  }
-  
-  #servicos h2 {
-    margin: 0;
     color: #fff;
-  }
-  
-  #servicos .service {
-    display: inline-block;
-    width: calc(25.00% - 40px);
+}
+
+#servicos h2 {
+    margin: 0;
+}
+
+#servicos .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Estilos para os serviços */
+#servicos .service {
+    width: calc(33.33% - 20px);
+    margin: 20px 0;
     background-color: #fff;
     color: #000;
     padding: 20px;
     text-align: center;
-    margin: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    vertical-align: top;
-  }
-  
-  #servicos .service img {
+    display: flex;
+    flex-direction: column;
+}
+
+#servicos .service img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
-  }
-  
-  #servicos .service h3 {
-    font-size: 20px;
-    margin: 0 0 10px;
-  }
-  
-  #servicos .service p {
-    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#servicos .service h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#servicos .service p {
+    font-size: 14px;
     text-align: justify;
     margin: 0;
-  }
-/*estilos nossos cliente*/
+    padding: 0 20px;
+}
+
+/* Estilos da seção Nossos Clientes */
 #nossos-clientes {
     background-color: #fff;
     padding: 40px;
     text-align: center;
+    width: 100%;
 }
 
 #nossos-clientes h2 {
@@ -381,10 +203,13 @@ nav ul li a {
     height: auto;
     margin: 0 10px;
 }
+
+/* Estilos da seção Contato */
 #contato {
     background-color: #f2f2f2;
     padding: 40px;
     text-align: center;
+    width: 100%;
 }
 
 #contato h2 {
@@ -420,14 +245,43 @@ nav ul li a {
 #contact-form button:hover {
     background-color: #e0601c;
 }
+
 /* Estilos do rodapé */
 footer {
     background-color: #000;
     padding: 20px;
     text-align: center;
-    margin-top: 20px; /* Espaço do rodapé em relação ao formulário */
-  }
+    margin-top: 20px;
+    color: #fff;
+    width: 100%;
+}
 
+/* Adicionando estilos para telas menores */
+@media only screen and (max-width: 768px) {
+    #sobre .about-content {
+        flex-direction: column;
+    }
 
+    .text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-top: 20px;
+    }
 
+    #servicos .service {
+        width: calc(50% - 20px);
+    }
+}
 
+/* Adicionando estilos para telas ainda menores, como smartphones */
+@media only screen and (max-width: 480px) {
+    #servicos .service {
+        width: 100%;
+    }
+}
+
+/* Adicionando estilos para garantir que a imagem não ultrapasse a largura do contêiner */
+img {
+    max-width: 100%;
+    height: auto;
+}

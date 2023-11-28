@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JLM Soluções - Página Inicial</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -17,16 +18,16 @@
         <h1>JLM Soluções</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="login.html">Logar</a></li>
+                <li><a href="#"><i class="fas fa-home nav-icon  "></i>Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle nav-icon  "></i>Sobre</a></li>
+                <li><a href="#"><i class="fas fa-cogs nav-icon  "></i>Serviços</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt nav-icon  "></i>Logar</a></li>
             </ul>
         </nav>
     </header>
 
 
-    <section id="sobre">
+    <section id="sobre" class="container mt-5">
         <h2>Quem Somos</h2>
         <div class="about-content">
             <div class="text">
@@ -48,42 +49,83 @@
         </div>
     </section>
 
-    <section id="servicos">
+    <section id="servicos" class="container mt-5">
         <h2>Nossos Serviços</h2>
-        <div class="service service-box">
-            <img src="Imagens/Equipamentos de Informatica-PhotoRoom.png-PhotoRoom.png" alt="Serviço 1">
-            <h3>Locação e Vendas de Equipamentos de Informática e Periféricos</h3>
-            <p>O outsourcing de equipamentos de informática é uma prática empresarial que consiste em contratar serviços de terceiros para gerenciar a infraestrutura de TI de uma organização. Com isso, as empresas podem se concentrar em seus principais negócios e deixar para especialistas em TI a responsabilidade de gerenciar sua infraestrutura de tecnologia, aumentando a eficiência e reduzindo custos.</p>
-        </div>
-                <div class="service">
-                    <img src="Imagens/outsourcing de impressao.jpg" alt="Serviço 2">
-                    <h3>Outsourcing de Impressão</h3>
-                    <p>O outsourcing de impressão é uma prática empresarial que consiste em contratar serviços de terceiros para gerenciar a impressão e cópia de documentos em uma empresa. Com isso, as empresas podem reduzir custos com impressão, terceirizando o gerenciamento de equipamentos, suprimentos e manutenção. Além disso, o outsourcing de impressão pode garantir maior segurança e controle de informações confidenciais.</p>
+        <p>
+            
+        </p>
+        <div id="serviceCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <img src="Imagens/Equipamentos de Informatica-PhotoRoom.png-PhotoRoom.png" class="d-block w-50 mx-auto" alt="Serviço 1">
+                        <div class="text-content">
+                            <h3>Locação e Vendas de Equipamentos de Informática e Periféricos</h3>
+                            <p>O outsourcing de equipamentos de informática é uma prática empresarial que consiste em contratar serviços de terceiros para gerenciar a infraestrutura de TI de uma organização...</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <img src="Imagens/servicos-de-engenharia.png-PhotoRoom.png-PhotoRoom.png" alt="Serviço 3">
-                    <h3>Serviços de Engenharia</h3>
-                    <p>Os serviços de engenharia são essenciais para o desenvolvimento de projetos de construção, infraestrutura e tecnologia. Engenheiros são responsáveis por planejar, executar e gerenciar projetos em diversas áreas, como civil, elétrica, mecânica e de software. Com os serviços de engenharia, empresas podem garantir a qualidade e segurança em seus projetos, bem como otimizar recursos e reduzir custos.</p>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <img src="Imagens/outsourcing de impressao.jpg" class="d-block w-50 mx-auto" alt="Serviço 2">
+                        <div class="text-content">
+                            <h3>Outsourcing de Impressão</h3>
+                            <p>O outsourcing de impressão é uma prática empresarial que consiste em contratar serviços de terceiros para gerenciar a impressão e cópia de documentos em uma empresa...</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <img src="Imagens/Engenharia clinica.png" alt="Serviço 4">
-                    <h3>Engenharia Clínica</h3>
-                    <p>A engenharia clínica é uma especialidade da engenharia que se dedica à gestão de equipamentos médicos em hospitais e clínicas. Com a engenharia clínica, é possível garantir a segurança e eficiência dos equipamentos, bem como aprimorar a qualidade do atendimento médico. Além disso, a engenharia clínica também é responsável pela manutenção e reparo de equipamentos, reduzindo custos e aumentando a vida útil dos mesmos.</p>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                    <img src="Imagens/servicos-de-engenharia.png-PhotoRoom.png-PhotoRoom.png" class="d-block w-50 mx-auto" alt="Serviço 3">
+                    <div class="text-content">
+                        <h3>Serviços de Engenharia</h3>
+                        <p>Os serviços de engenharia são essenciais para o desenvolvimento de projetos de construção, infraestrutura e tecnologia. Engenheiros são responsáveis por planejar, executar e gerenciar projetos em diversas áreas, como civil, elétrica, mecânica e de software...</p>
+                    </div>
                 </div>
-                <div class="service">
-                    <img src="Imagens/servico-de-apoio-administrativo.jpg" alt="Serviço 5">
-                    <h3>Apoio Administrativo</h3>
-                    <p>O apoio administrativo é uma prática empresarial que consiste em contratar serviços de terceiros para auxiliar na rotina administrativa de uma empresa. Isso inclui atividades como atendimento telefônico, gerenciamento de correspondências, agendamento de reuniões e organização de documentos. Com o apoio administrativo, empresas podem otimizar seus processos e reduzir o tempo e custo dedicados a atividades administrativas.</p>
                 </div>
-                <div class="service">
-                    <img src="Imagens/consultoria-gestao-negocios-01.jpg" alt="Serviço 6">
-                    <h3>Consultorias em Gestão</h3>
-                    <p>As consultorias em gestão oferecem serviços especializados para auxiliar empresas na melhoria de processos e tomada de decisões estratégicas. Consultores em gestão trabalham em conjunto com a equipe interna da empresa para identificar oportunidades de otimização, redução de custos e aumento de eficiência. Com a consultoria em gestão, empresas podem aprimorar seus resultados e alcançar seus objetivos de negócios de forma mais eficiente e eficaz.</p>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <img src="Imagens/Engenharia clinica.png" class="d-block w-50 mx-auto" alt="Serviço 4">
+                        <div class="text-content">
+                            <h3>Engenharia Clínica</h3>
+                            <p>A engenharia clínica é uma especialidade da engenharia que se dedica à gestão de equipamentos médicos em hospitais e clínicas. Com a engenharia clínica, é possível garantir a segurança e eficiência dos equipamentos, bem como aprimorar a qualidade do atendimento médico...</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <img src="Imagens/servico-de-apoio-administrativo.jpg" class="d-block w-50 mx-auto" alt="Serviço 5">
+                        <div class="text-content">
+                            <h3>Apoio Administrativo</h3>
+                            <p>O apoio administrativo é uma prática empresarial que consiste em contratar serviços de terceiros para auxiliar na rotina administrativa de uma empresa. Isso inclui atividades como atendimento telefônico, gerenciamento de correspondências, agendamento de reuniões e organização de documentos...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <img src="Imagens/consultoria-gestao-negocios-01.jpg" class="d-block w-50 mx-auto" alt="Serviço 6">
+                        <div class="text-content">
+                            <h3>Consultorias em Gestão</h3>
+                        <p>As consultorias em gestão oferecem serviços especializados para auxiliar empresas na melhoria de processos e tomada de decisões estratégicas. Consultores em gestão trabalham em conjunto com a equipe interna da empresa para identificar oportunidades de otimização, redução de custos e aumento de eficiência...</p>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Adicione os outros itens seguindo a mesma estrutura -->
             </div>
-        </section>
+            <a class="carousel-control-prev" href="#serviceCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#serviceCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>  
+       
     
-        <section id="nossos-clientes">
+        <section id="nossos-clientes" class="container mt-5">
             <h2>Nossos Clientes</h2>
             <div class="clientes-container">
                 <marquee behavior="scroll" direction="left" scrollamount="10">
@@ -99,7 +141,7 @@
             </div>
         </section>
     
-        <section id="contato">
+        <section id="contato" class="container mt-5">
             <h2>Contato</h2>
             <form id="contact-form" action="enviar-email.php" method="POST">
                 <input type="text" name="nome" placeholder="Seu nome" required>
@@ -109,18 +151,22 @@
             </form>
     </section>
 
-    <footer>
+    <footer class="mt-5">
         <div>
             <p>&copy; 2023 JLM WEB. Todos os direitos reservados.</p>
         </div>
         <div>
-            <a href="https://www.instagram.com/seu_perfil/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/jlm.solucoes/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/seu_perfil/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/seu_perfil/" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://twitter.com/seu_perfil/" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/SEU_ID_DO_KIT.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

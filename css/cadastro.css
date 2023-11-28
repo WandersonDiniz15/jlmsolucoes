@@ -127,9 +127,13 @@ section#cadastro form .buttons a:hover {
   background-color: #555;
 }
 
+/* Rodapé */
 footer {
-  background-color: #000000;
+  background-color: #000;
   color: white;
   padding: 20px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
